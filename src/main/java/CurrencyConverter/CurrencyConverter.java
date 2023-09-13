@@ -11,13 +11,13 @@ import java.util.Scanner;
 
 public class CurrencyConverter {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("type Currency to Convert from");
-        String convertFrom=scanner.nextLine();
-        System.out.println("type Currency to Convert to");
-        String covertTo=scanner.nextLine();
-        System.out.println("type quantity to convert");
-        BigDecimal quantity = scanner.nextBigDecimal();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the currency to convert from : ");
+        String convertFrom=sc.nextLine();
+        System.out.print("Enter the currency to convert to : ");
+        String covertTo=sc.nextLine();
+        System.out.print("Enter the quantity to convert : ");
+        BigDecimal quantity = sc.nextBigDecimal();
 
         String urlstring= "https://api.exchangerate.host/latest?base=" + convertFrom.toUpperCase();
 
@@ -37,10 +37,6 @@ public class CurrencyConverter {
 
 
         BigDecimal result= rate.multiply(quantity);
-        System.out.println(result);
-
-
-
-
+        System.out.println("Answer :- " + result);
     }
 }
